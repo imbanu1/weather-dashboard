@@ -1,0 +1,26 @@
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding:20px;
+    background-color: #0b1b2b;
+    color: #ffffff;
+    text-align: center;
+    }
+
+    h1{
+        font-size: 22px;
+        width:500px;
+    margin: 0 auto;
+    background: gray;
+    text-align: center;
+}
