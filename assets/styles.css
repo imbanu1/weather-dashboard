@@ -18,9 +18,53 @@ header {
     }
 
     h1{
-        font-size: 22px;
-        width:500px;
+    font-size: 22px;
+    width:500px;
     margin: 0 auto;
     background: gray;
     text-align: center;
+}
+.container {
+    padding: 20px;
+    display: flex;
+    gap: 50px;
+}
+.weather-input{
+    width: 600px;
+}
+.weather-input input{
+    font-size: 20px;
+    padding: auto 20px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+}
+.weather-info {
+    width: 100%;
+}
+.weather-input button{
+    background: rgb(51, 124, 207);
+    padding: 5px 5px;
+    width: auto;
+    font-size: 15px;
+    border-radius: 5px;
+    
+}
+.current-weather{
+    background: rgb(51, 124, 207);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+    border-radius: 5px;
+}
+.current-weather h3 {
+    font-size: 1.5rem;
+}
+
+.weather-info h4{
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: 200;
 }
