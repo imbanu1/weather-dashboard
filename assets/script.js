@@ -3,7 +3,11 @@ const searchButton = document.querySelector(".search-btn");
 const api_key = "2b87bff885ca192fd8b730a4b4993c0c";
 
 const getWeatherDetails = (cityName, lat, lon) => {
-    const weather_api_url = ``;
+const weather_api_url = `http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}`;
+
+fetch(weather_api_url).then(res => res.json()).then(data => {
+console.log(data);
+})
 }
 
 const getCityCoordinates = () => {
