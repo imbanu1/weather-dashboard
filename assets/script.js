@@ -23,15 +23,15 @@ const createWeatherCard = (cityName, weatherItem, index) => {
     }
 }
 
-const getWeatherDetails = (cityName, lat, lon) => {
-const weather_api_url = `http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={api_key}`;
+const getWeatherDetails = (cityName, latitude, longitude) => {
+const weather_api_url = `https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={9ba3772b98fc71424a1d797899a282f1b}`;
 
 fetch(weather_api_url)
 .then(res => res.json()).then(data => {
 const specialForecastDays = [];
-const fiveDaysForecast = data.list.filter((forecast) => {
+const fiveDaysForecast = data.list.filter(forecast => {
 const forecastDate = new Date(forecast.dt_txt).getDate();
-if(!specialForecastDays.includes(forecastDate)) {
+if (!specialForecastDays.includes(forecastDate)) {
     return specialForecastDays.push(forecastDate);
 }
 });
@@ -40,28 +40,25 @@ currentWeather.innerHTML ="";
 weatherCards.innerHTML ="";
 
 
-console.log(fiveDaysForecast);
 fiveDaysForecast.forEach((weatherItem, index) => {
 if(index === 0) {
     currentWeather.insertAdjacentHTML("beforeend", createWeatherCard(cityName, weatherItem, index));
 }else {
 
-}
-
    weatherCards.insertAdjacentHTML("beforeend", createWeatherCard(cityName, weatherItem, index));
-    
+}
 });
 }).catch(() => {
     alert("An error occurred while fetching the weather forecast");
 });
-};
+}
 
 const getCityCoordinates = () => {
     const cityName =  cityInput.value.trim();
-    if(!cityName) return;
-    const geocoding_api_url = `http://api.openweathermap.org/data/2.5/forecast?q=London,us&mode=xml&appid={api_key}`;
+    if(!cityName === "") return;
+    const api_url = `https://api.openweathermap.org/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={9ba3772b98fc71424a1d797899a282f1b}`;
 
-    fetch(geocoding_api_url).then(res => res.json()).then(data => {
+    fetch(api_url).then(res => res.json()).then(data => {
         if (!data.length) 
         return alert(`Error! No coordinates found for ${cityName}`);
         const {name, lat, lon } = data [0];
@@ -71,8 +68,11 @@ const getCityCoordinates = () => {
         alert("An error occurred while retrieving data");
     });
 
-};
+}
+
+
+
 
 searchButton.addEventListener("click", getCityCoordinates);
-
+cityInput.addEventListener("keyup", e => e.key === "Enter" && getCityCoordinates());
 
