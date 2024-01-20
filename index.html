@@ -22,10 +22,10 @@
         <div class="weather-info">
         <div class="current-weather">
             <div class="info">
-                <h3>( _______ )</h3>
-                <h4>Temperature: ___°F</h4>
-                <h4>Wind: __ MPH</h4>
-                <h4>Humidity: __%</h4>
+                <h3 id="currentcity">( _______ )</h3>
+                <h4 id="temp">Temperature: ___°F</h4>
+                <h4 id="wind">Wind: __ MPH</h4>
+                <h4 id="humidity">Humidity: __%</h4>
             </div>
         
         </div>
@@ -34,13 +34,13 @@
             <ul class="forecast-cards">
                 <li class="card">
                     <h3>( _______ )</h3>
-                <h4>Temperature: ___°F</h4>
+                <h4 id="temp">Temperature: ___°F</h4>
                 <h4>Wind: __ MPH</h4>
                 <h4>Humidity: __%</h4> 
                 </li>
                 <li class="card">
                     <h3>( _______ )</h3>
-                <h4>Temperature: ___°F</h4>
+                <h4 id="temp">Temperature: ___°F</h4>
                 <h4>Wind: __ MPH</h4>
                 <h4>Humidity: __%</h4> 
                 </li>
@@ -69,9 +69,5 @@
     </div>
 <hr>
 <script src="./assets/script.js"></script>
-<script
-src="https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={92bcc9c50c1322e008341ce25c7ef86b}"
-defer
-></script>
 </body>
 </html>
