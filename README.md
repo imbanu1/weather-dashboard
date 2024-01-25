@@ -1,6 +1,7 @@
 # weather-dashboard
 GIVEN a weather dashboard with form inputs
 ![d211](https://github.com/imbanu1/weather-dashboard/blob/main/assets/images/dashboard%201.jpg?raw=true))
+https://github.com/imbanu1/Readme-generator/blob/main/images/readme-title.png?raw=true 
 
 WHEN I search for a city
 THEN I am presented with current and future conditions for that city and that city is added to the search history
